@@ -1,22 +1,44 @@
 <script lang="ts">
 	import Header from './Header.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import { darkMode } from '$lib/stores/theme';
 	import '../app.css';
 
 	let { children } = $props();
+
+	// Update document class when dark mode changes
+	$effect(() => {
+		if (typeof document !== 'undefined') {
+			if ($darkMode) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+	});
 </script>
 
-<div class="app">
-	<Header />
+<div class="app dark:bg-gray-900">
+	<header class="flex justify-between items-center p-4 bg-white dark:bg-gray-800 shadow-sm">
+		<div>
+			<h1 class="text-xl font-bold text-gray-900 dark:text-white">Kubeconfig Generator</h1>
+		</div>
+		<div class="flex items-center gap-4">
+			<nav>
+				<ul class="flex gap-4">
+					<li><a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">Home</a></li>
+					<li><a href="/config" class="text-blue-600 dark:text-blue-400 hover:underline">Configuration</a></li>
+				</ul>
+			</nav>
+			<ThemeToggle />
+		</div>
+	</header>
 
-	<main>
+	<main class="dark:bg-gray-900 dark:text-white">
 		{@render children()}
 	</main>
 
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
+	<!-- Footer content removed -->
 </div>
 
 <style>

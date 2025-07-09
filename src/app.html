@@ -5,8 +5,20 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+		<script>
+			// On page load, check if user prefers dark mode
+			function applyTheme() {
+				const darkMode = localStorage.getItem('darkMode');
+				if (darkMode === 'true' || (!darkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			}
+			applyTheme();
+		</script>
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="hover" class="transition-colors duration-300 bg-white dark:bg-gray-900 dark:text-white">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
