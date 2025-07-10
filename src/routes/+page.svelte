@@ -2,6 +2,7 @@
 	// Add dark mode support
 	import { onMount } from 'svelte';
 	import { darkMode } from '$lib/stores/theme';
+	import { base } from '$app/paths';
 
 	// Icons for features
 	let mounted = false;
@@ -62,7 +63,7 @@
 	</div>
 
 	<div class="text-center">
-		<a href="/config" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-medium transition-colors dark:bg-blue-700 dark:hover:bg-blue-800 !text-white">
+		<a href="{base}/config" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-medium transition-colors dark:bg-blue-700 dark:hover:bg-blue-800 !text-white">
 			Start Creating Manifests
 		</a>
 	</div>

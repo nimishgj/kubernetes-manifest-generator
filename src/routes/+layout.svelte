@@ -1,8 +1,15 @@
 <script lang="ts">
-	import Header from './Header.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import { darkMode } from '$lib/stores/theme';
+	import { base } from '$app/paths';
 	import '../app.css';
+
+	// Import GitHub Pages SPA redirect handler
+	import '$lib/gh-pages-spa-redirect.js';
+
+export const prerender = true;
+
+export const trailingSlash = "always";
 
 	let { children } = $props();
 
@@ -26,8 +33,8 @@
 		<div class="flex items-center gap-4">
 			<nav>
 				<ul class="flex gap-4">
-					<li><a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">Home</a></li>
-					<li><a href="/config" class="text-blue-600 dark:text-blue-400 hover:underline">RBAC</a></li>
+					<li><a href="{base}/" class="text-blue-600 dark:text-blue-400 hover:underline">Home</a></li>
+					<li><a href="{base}/config" class="text-blue-600 dark:text-blue-400 hover:underline">RBAC</a></li>
 				</ul>
 			</nav>
 			<ThemeToggle />
@@ -59,21 +66,5 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+	/* Remove unused footer styles to clear warnings */
 </style>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // Modified from https://github.com/rafgraph/spa-github-pages
+    
+    // This handles GitHub Pages SPA routing by redirecting 404s to the index with the path as a parameter
+    
+    const baseRepoPath = '/kubernetes-manifest-generator';
+    const pathname = window.location.pathname;
+    
+    // Get the path without the repo name
+    let path = pathname;
+    if (pathname.indexOf(baseRepoPath) === 0) {
+      path = pathname.substring(baseRepoPath.length);
+    }
+    
+    // Redirect to index with the path as a redirect parameter
+    window.location.href = baseRepoPath + '/?redirect=' + encodeURIComponent(path) + window.location.search + window.location.hash;
+  </script>
+</head>
+<body>
+  <h2>Redirecting...</h2>
+  <p>If you are not redirected automatically, <a href="/kubernetes-manifest-generator/">click here</a>.</p>
+</body>
+</html>
