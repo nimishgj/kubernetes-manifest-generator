@@ -21,13 +21,13 @@
 <div class="app dark:bg-gray-900">
 	<header class="flex justify-between items-center p-4 bg-white dark:bg-gray-800 shadow-sm">
 		<div>
-			<h1 class="text-xl font-bold text-gray-900 dark:text-white">Kubeconfig Generator</h1>
+			<h1 class="text-xl font-bold text-gray-900 dark:text-white">Kubernetes Manifest Generator</h1>
 		</div>
 		<div class="flex items-center gap-4">
 			<nav>
 				<ul class="flex gap-4">
 					<li><a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">Home</a></li>
-					<li><a href="/config" class="text-blue-600 dark:text-blue-400 hover:underline">Configuration</a></li>
+					<li><a href="/config" class="text-blue-600 dark:text-blue-400 hover:underline">RBAC</a></li>
 				</ul>
 			</nav>
 			<ThemeToggle />

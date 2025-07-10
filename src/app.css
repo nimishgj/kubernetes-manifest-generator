@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import '@fontsource/fira-mono';
-@plugin '@tailwindcss/typography';
+/* Tailwind Typography plugin should be configured in tailwind.config.js, not via CSS */
 
 :root {
 	--font-body:
@@ -17,6 +17,21 @@
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
+}
+
+/* Fix overscroll background issue */
+html, body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #ffffff;
+}
+
+html.dark, html.dark body {
+	background-color: #111827; /* dark:bg-gray-900 */
 }
 
 body {

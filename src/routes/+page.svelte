@@ -12,17 +12,17 @@
 </script>
 
 <svelte:head>
-	<title>Kubeconfig Generator</title>
-	<meta name="description" content="A tool for generating Kubernetes configuration files" />
+	<title>Kubernetes Manifest Generator</title>
+	<meta name="description" content="A tool for generating Kubernetes RBAC manifest files" />
 </svelte:head>
 
 <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 	<div class="text-center mb-16">
 		<h1 class="text-4xl md:text-5xl font-bold mb-4 text-blue-600 dark:text-blue-400">
-			Kubeconfig Generator
+			Kubernetes Manifest Generator
 		</h1>
 		<p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-			Easily generate Kubernetes configuration files for service accounts with appropriate RBAC permissions
+			Easily generate Kubernetes RBAC manifests with namespaces, service accounts, roles and role bindings
 		</p>
 	</div>
 
@@ -35,7 +35,7 @@
 				</svg>
 			</div>
 			<h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Service Account Management</h3>
-			<p class="text-gray-600 dark:text-gray-300">Create and configure multiple service accounts with specific namespaces for your Kubernetes cluster.</p>
+			<p class="text-gray-600 dark:text-gray-300">Create and configure multiple service accounts with specific namespaces, then link them to appropriate roles.</p>
 		</div>
 
 		<!-- Feature 2 -->
@@ -46,7 +46,7 @@
 				</svg>
 			</div>
 			<h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">RBAC Role Configuration</h3>
-			<p class="text-gray-600 dark:text-gray-300">Define precise roles with specific API groups, resources, and permissions to follow the principle of least privilege.</p>
+			<p class="text-gray-600 dark:text-gray-300">Define precise roles with wildcards, resource groups, and template duplication across namespaces to follow the principle of least privilege.</p>
 		</div>
 
 		<!-- Feature 3 -->
@@ -56,14 +56,14 @@
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
 				</svg>
 			</div>
-			<h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Cluster Integration</h3>
-			<p class="text-gray-600 dark:text-gray-300">Connect to your specific Kubernetes cluster with custom server URL and cluster name configuration.</p>
+			<h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Namespace Management</h3>
+			<p class="text-gray-600 dark:text-gray-300">Create and manage namespaces with fine-grained control over which ones to include in your final YAML manifest.</p>
 		</div>
 	</div>
 
 	<div class="text-center">
 		<a href="/config" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-medium transition-colors dark:bg-blue-700 dark:hover:bg-blue-800 !text-white">
-			Start Creating Configurations
+			Start Creating Manifests
 		</a>
 	</div>
 </section>
